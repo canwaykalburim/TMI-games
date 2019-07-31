@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Scene.unity
+  isLoaded: 1
+  isActive: 1
