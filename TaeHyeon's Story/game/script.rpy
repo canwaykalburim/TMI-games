@@ -64,7 +64,9 @@ image YoonJu:
 image YoonSu:
     im.FactorScale ("ch/YoonSu.png", 0.95)
     yalign 0.2
-
+image SmileHS:
+    im.FactorScale ("ch/SmileHS.png", 1.0)
+    yalign 0.5
 image Street = "bg/street.png"
 
 #define narrator = Character(None, kind = nvl)
