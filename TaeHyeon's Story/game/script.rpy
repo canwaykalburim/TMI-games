@@ -80,9 +80,11 @@ transform movetoright:
 transform movetoleft:
     linear 0.5 xalign 0.0
 
-# 스토리 시작 점
+# 스토리
 
-label start:
+label start: # part1
+
+    $Interchange = 0
 
     play music "BGM/Doki Doki Literature Club_Ohayou Sayori.wav"
 
@@ -223,10 +225,8 @@ label start:
 
     hide AngrySH
 
-    "갑작스럽게 나타나 태현이 일행에게 모습을 드러낸 상하이 조!"
+    "갑작스럽게 나타나 태현이 일행에게 모습을 드러낸 상하이 조"
     "상하이 조는 조금씩 태현이 일행에게 다가오고 있다"
-
-    $Interchange = 0
 
     menu:
         "어떻게 해야할까"
@@ -237,36 +237,44 @@ label start:
             $Interchange += 1
             call Run_Ending
 
+    jump part_two
+
+    return
+
+
+label part_two: #part2
+
     "상하이 조는 총을 꺼내들었다"
 
     show BraveTH at center
 
     ch_TaeHyeon "!!!"
+    ch_TaeHyeon "생각 보다 더 위험한 놈이었군..."
 
     hide KillerSH
     hide BraveTH
 
-    "태현이는 조금 당황 했지만 이내 침착을 되찾았다"
+    "태현이는 잠시 당황 했지만 이내 침착을 되찾았다"
 
     show KillerSH
 
     ch_SangHai "호오 총을 보고도 놀라지 않다니..."
-    ch_SangHai "생각보다 용감한 놈이구만"
+    ch_SangHai "생각보다 더 용감한 놈이구만"
     ch_SangHai "이거 진짜 총이라구?"
 
     hide KillerSH
 
     "태현이는 아무말도 하지 않았다"
-    "그리고 태현이는 살며시 미소를 지었다"
+    "대신 태현이는 살며시 미소를 지었다"
 
     show KillerSH
 
-    ch_SangHai "뭐야 지금 웃은거야?"
+    ch_SangHai "뭐야 지금 웃는거야?"
     ch_SangHai "막상 죽을 생각을 하니 무서워서 미친거구만?"
 
     hide KillerSH
 
-    "태현은 조금씩 입을 열기 시작했다"
+    "태현은 미소를 유지하며 조금씩 입을 열기 시작했다"
 
     show GreatTH
     
@@ -275,7 +283,7 @@ label start:
 
     hide GreatTH
 
-    "상하이 조는 고개를 갸웃 했다"
+    "상하이 조는 의아해하며 고개를 갸웃했다"
 
     show GreatTH
 
@@ -305,16 +313,18 @@ label start:
 
     play music "BGM/Doki Doki Literature Club_Ohayou Sayori.wav"
 
-    ch_SangHai "허허허..."
+    ch_SangHai "하하하!"
     ch_SangHai "죽을 수도 있는 상황에서 그런 말이 나오다니"
-    ch_SangHai "이거 이거 재밌는 놈인걸?"
+    ch_SangHai "가히 영웅급의 희생정신인데?"
+    ch_SangHai "이거 이거... 재밌는 놈인걸?"
     ch_SangHai "흠... 죽이기에는 너무 아깝단 말이지..."
     ch_SangHai "이봐"
+    ch_SangHai "너에게 한 번의 기회를 주지"
     ch_SangHai "너 우리랑 함께 일 해보지 않을래?"
 
     hide SmileSH
 
-    "상하이 조는 갑작스럽게 태현이에게 협력을 요청하였다"
+    "방금 전까지 태현이의 일행을 위협하던 상하이 조가 갑작스럽게 태현이에게 협력을 요청하였다"
 
     menu:
         "그의 제안에 승낙할까?"
@@ -359,7 +369,7 @@ label Run_Ending: # 도망친다
 
     ch_YoonSu "헛소리 하지마!"
     ch_YoonSu "우리가 널 버리고 어떻게 도망가?"
-    ch_YoonSu "우리도 저 녀석을 막을 수 있게 해줘"
+    ch_YoonSu "우리도 저 녀석을 막을 수 있게 해줘!"
 
     "태현이는 윤수의 말에 미소를 지으며 대답했다"
 
@@ -429,12 +439,18 @@ label Fight_Ending: # 싸운다
 
     ch_TaeHyeon "위험해...!"
     ch_TaeHyeon "이 사람... 아무리 봐도 위험한 사람이야!"
+    ch_TaeHyeon "....."
     ch_TaeHyeon "어쩔 수 없지..."
+
+    hide TaeHyeon
 
     "태현이는 뒤를 돌아보며 소리쳤다"
 
-    ch_TaeHyeon "여기는 나에게 맡겨"
-    ch_TaeHyeon "그리고 그 틈에 너희는 어서 도망가!"
+    show TaeHyeon at center
+
+    ch_TaeHyeon "여기는 나에게 맡겨!"
+    ch_TaeHyeon "일단은 내가 이 사람을 막고 있을게"
+    ch_TaeHyeon "그 틈에 너희는 어서 도망가!"
     ch_TaeHyeon "이 사람은..."
 
     hide TaeHyeon with dissolve
@@ -447,8 +463,49 @@ label Fight_Ending: # 싸운다
 
     hide BraveTH
 
-    "친구들은 당황스러웠지만 태현이를 믿고 말을 듣기로 했다"
-    "태현이 덕에 친구들은 무사히 도망에 성공했다"
+    "윤주가 태현이의 말에 당황하여 물었다"
+
+    show YoonJu
+
+    ch_YoonJu "그게 무슨 소리야? 쓰러트린다니?"
+
+    hide YoonJu
+
+    "태현이가 태연하게 말했다"
+
+    show BraveTH
+
+    ch_TaeHyeon "이해 못했어?"
+    ch_TaeHyeon "말 그대로야"
+    ch_TaeHyeon "내가 이 사람을 쓰러트릴거야"
+
+    show BraveTH at movetoleft
+    show YoonJu with moveinright
+
+    ch_YoonJu "그러니까... 그게 무슨 소리냐고..."
+    ch_YoonJu "방금전에 니 입으로 직접 저 사람은 위험하다며?"
+    ch_YoonJu "근데 왜 쓰러트리려는 건데???"
+
+    hide BraveTH
+    hide YoonJu
+
+    "태현이는 다가오는 상하이 조를 막아서면서 말했다"
+
+    show BraveTH
+
+    ch_TaeHyeon "지금 상황 안보여?"
+    ch_TaeHyeon "내가 쓰러트리지 않으면 저 사람은 분명히 우리에게 다시 접근할 거야"
+    ch_TaeHyeon "반드시..."
+    ch_TaeHyeon "그러니 여기서 끝을 내야돼"
+    ch_TaeHyeon "나에게 작전이 있어 그러니까 너희는 내 걱정하지 말고 빨리 도망가"
+    ch_TaeHyeon "시간 없어! 빨리!"
+
+    hide BraveTH
+
+    "친구들은 왜인지 모르게 태현이에게서 묘한 자신감을 느꼈다"
+    "갑작스러운 상황에 친구들은 조금 당황스러웠지만 일단 태현이를 믿고 맡기기로 했다"
+    "결국 태현이 덕에 친구들은 무사히 도망에 성공했다"
+    "상하이 조는 우스운 듯 말했다"
 
     show SangHai
 
@@ -461,20 +518,46 @@ label Fight_Ending: # 싸운다
     show SangHai
 
     ch_SangHai "하하하"
+    ch_SangHai "아주 자신감이 넘쳐 흐르는데?"
+
+    hide SangHai
+
+    "상하이 조는 어이없는 듯 웃었다"
+
+    show SmileSH
+
     ch_SangHai "하하하하하!"
-    ch_SangHai "재미있구만"
-    ch_SangHai "하.지.만"
+    ch_SangHai "이거 이거.. 재미있구만~"
+
+    hide SmileSH
+
+    "큰 소리로 웃던 상하이 조가 갑자기 정색하며 말했다"
+
+    show AngrySH
+
+    ch_SangHai "근데 지금 네 실력으로는 나를 못 이긴다는 걸 알고 있을 텐데?"
+    ch_SangHai "친구들에게 도망칠 수 있는 시간을 벌기 위한 행동이었던 거 알고 있어"
+    ch_SangHai "결과적으로 네 계획은 성공 했고 말이야"
+    ch_SangHai "친구들을 안심하고 무사히 도망칠 수 있게 만든 연기와..."
+    ch_SangHai "친구들을 구하기 위해 혼자서 희생하려는 용기는 높게 사겠어"
+    ch_SangHai "그런데 말이야..."
 
     hide SangHai
     show TalkingSH
 
-    ch_SangHai "세상에는 용기만으로는 안되는 일이 있단말이지..."
+    ch_SangHai "세상에는 용기만으로는 안되는 일도 있단말이지..."
+    ch_SangHai "나는 말이야... 무모한 사람은 좋아하지 않는단 말이지"
+
+    hide TalkingSH
 
     "상하이 조가 안타까운 듯 말했다"
 
+    show TalkingSH
+
     ch_SangHai "그래도..."
-    ch_SangHai "나와 싸우겠다는 생각을 하다니"
-    ch_SangHai "용기 하나는 높게 사 주겠어"
+    ch_SangHai "혼자서 나와 싸우겠다는 생각을 하다니 대단한걸?"
+    ch_SangHai "친구들을 위한 마음은 잘 봤다"
+    ch_SangHai "감동적이었어~"
     ch_SangHai "그럼 편안히 함께 저승으로..."
 
     hide TalkingSH
