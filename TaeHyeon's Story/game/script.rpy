@@ -709,19 +709,31 @@ label Silence_Ending: # 침묵한다
     "태현이는 상하이 조의 행동에 분노했다"
     "상하이 조 예상했던 반응이었는지 가볍게 찡그리며 말하였다"
 
+    show SmileSH
+
     ch_SangHai "뭐야~ 완전 무섭잖아~?"
     ch_SangHai "네가 이렇게 무서운 녀석인지 몰랐는걸?"
     ch_SangHai "근데 말이지..."
-    ch_SangHai "내가 제안했을 때는 왜 바로 분노하지 않았지?="
+    ch_SangHai "내가 제안했을 때는 왜 바로 분노하지 않았지?"
     ch_SangHai "사실 조금 망설였던거 아니야?"
+
+    hide SmileSH
 
     "상하이 조는 태현이에게 비아냥 거렸다"
     "태현이는 상하이 조의 도발에 잠깐 동안 크게 흔들렸다"
     "하지만..."
     "태현이는 눈을 감고 잠시 생각하더니 이내 한심하다는 듯 한숨을 쉬었다"
 
+    show GreatTH
+    
     ch_TaeHyeon "하..."
     ch_TaeHyeon "겨우 그게 다냐?"
+    ch_TaeHyeon "네가 하려던게 겨우 그런 유치한 도발이냐?"
+    ch_TaeHyeon "우습다 못해 한심하군"
+
+    hide GreatTH
+
+    "상하이 조가 어이없는 듯 웃었다"
 
     if (Interchange == 1):
         jump Agonize_Meet_Boss1
