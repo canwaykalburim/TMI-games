@@ -696,8 +696,9 @@ label Silence_Ending: # 침묵한다
 
     show BraveTH
 
-    ch_TaeHyeon "뭐...? 상처?"
-    ch_TaeHyeon "무슨 속셈이냐...?"
+    ch_TaeHyeon "뭐...?"
+    ch_TaeHyeon "상처?"
+    ch_TaeHyeon "무슨 속셈이냐?"
     ch_TaeHyeon "지금 나랑 장난하자는 거냐?"
     ch_TaeHyeon "방금 전까지만 해도 나와 내 친구들을 해치려 하더니"
     ch_TaeHyeon "이제 와서 너와 함께 일을 하라는 거냐?"
@@ -720,7 +721,7 @@ label Silence_Ending: # 침묵한다
     hide SmileSH
 
     "상하이 조는 태현이에게 비아냥 거렸다"
-    "태현이는 상하이 조의 도발에 잠깐 동안 크게 흔들렸다"
+    "태현이는 상하이 조의 도발에 잠깐 동안 크게 흔들렸다."
     "하지만..."
     "태현이는 눈을 감고 잠시 생각하더니 이내 한심하다는 듯 한숨을 쉬었다"
 
@@ -733,7 +734,26 @@ label Silence_Ending: # 침묵한다
 
     hide GreatTH
 
+    "태현이는 역으로 상하이 조에게 비아냥거렸다"
     "상하이 조가 어이없는 듯 웃었다"
+
+    show SmileSH
+
+    ch_SangHai "하하하..."
+    ch_SangHai "하하하하하!"
+    ch_SangHai "하..."
+    ch_SangHai "너 오늘 사람 여러 번 웃게 만드네?"
+    ch_SangHai "하... 축하한다..."
+    ch_SangHai "네가 이겼어~"
+    ch_SangHai "도발인지 알고 있는데도 참을 수가 없는 걸~?"
+    ch_SangHai "하지만~"
+
+    hide SmileSH with dissolve
+    show KillerSH with dissolve
+
+    ch_HoSeung "최후에 웃는자는 누구일까!?"
+
+    "상하이 조가 다시 총구를 겨눴다"
 
     if (Interchange == 1):
         jump Agonize_Meet_Boss1
@@ -743,6 +763,49 @@ label Silence_Ending: # 침묵한다
     return
 
 # 보스와 만남
+
+label Negotiate_Boss: # 협상 (2점)
+
+    "태현이 때문에 상하이 조가 휘청거렸다"
+
+    q "잘했네 젊은이!"
+
+    "의문의 남성이 상하이 조를 걷어찼다"
+    "상하이 조는 지면에 쓰러졌다"
+
+    q "자네의 용기 있는 행동에 다시 한 번 찬사를 보내네"
+
+    return
+
+label Agonize_Meet_Boss1: # 고민 (1점)
+
+    q "물러서게 젊은이!"
+    
+    "의문의 남성이 상하이 조의 총을 걷어찼다"
+
+    return
+
+label Agreement_Meet_Boss: # 합의 (0점)
+
+    q "위험하네 젊은이!"
+
+    "한 남성이 태현이와 상하이 조를 막아섰다"
+
+    q "용기있는 행동은 좋으나..."
+    q "때로는 상황을 볼 줄도 알아야 한다네"
+
+    return
+
+label Agonize_Meet_Boss2: # 고민 (-1점)
+
+    "태현이는 잠시 주춤 했다"
+
+    q "뭐하고 있나 젊은이"
+    q "가만히 보고만 있을건가?"
+
+    "누군가 상하이 조를 막아섰다"
+
+    return
 
 label Forced_Boss: # 강제 (-2점)
 
@@ -785,42 +848,6 @@ label Forced_Boss: # 강제 (-2점)
 
     "자신을 장호승이라 소개한 남성은 자신과 함께 가자고 권유 했다"
     "태현이는 그 남자가 조금 수상했지만 다른 방법이 없었다"
-
-    return
-
-label Negotiate_Boss: # 협상 (2점)
-
-    q "잘했네 젊은이!"
-
-    "한 남성이 상하이 조의 총을 걷어 찼다"
-
-    q "자네의 용기 있는 행동에 다시 한 번 찬사를 보내네"
-
-    return
-
-label Agonize_Meet_Boss1: # 고민 (1점)
-
-    q "뭐하고 있나 젊은이"
-
-    return
-
-label Agonize_Meet_Boss2: # 고민 (-1점)
-
-    q "뭐하고 있나 젊은이"
-    q "가만히 보고만 있을건가?"
-
-    return
-
-label Agreement_Meet_Boss: # 합의 (0점)
-
-    q "위험하네 젊은이!"
-
-    "한 남성이 태현이와 상하이 조를 막아섰다"
-
-    q "용기있는 행동은 좋으나..."
-    q "때로는 상황을 볼 줄도 알아야 한다네"
-
-    
 
     return
 
