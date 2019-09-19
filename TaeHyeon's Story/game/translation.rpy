@@ -18,7 +18,7 @@ init -1 python hide:
     : u'빨리 넘기기',
 
     u'Please click to continue.'
-    : u'클릭하시면 진행합니다.',
+    : u'진행을 위해 클릭해 주세요.',
 
     u'Start'
     : u'시작',
