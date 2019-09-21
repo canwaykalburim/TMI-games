@@ -780,7 +780,13 @@ label Negotiate_Boss: # 협상 (2점)
     show BossHS
 
     q "자네의 용기 있는 행동에 다시 한 번 찬사를 보내네"
-    ch_HoSeung "내 이름은 장호승일세"
+    ch_HoSeung "내 이름은 장호승일세 만나서 반갑구만"
+
+    hide BossHS
+
+    "의문의 남성은 자신을 장호승이라고 소개했다"
+
+    ch_HoSeung "이름"
 
     return
 
@@ -816,7 +822,7 @@ label Agreement_Meet_Boss: # 합의 (0점)
     q "용기있는 행동은 좋으나..."
     q "때로는 상황을 볼 줄도 알아야 한다네"
 
-    "태현은 갑자기 나타난 남성 때문에 혼란스러워졌다"
+    "태현이는 갑자기 나타난 남성 때문에 혼란스러워졌다"
 
     show SurpSH
 
@@ -849,6 +855,8 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
     ch_SangHai "당신이 여기를 어떻게...?"
 
     "상하이 조는 조금 당황한 눈치였다"
+
+    q "앞으로의 미래를 이끌어갈 새싹을 짓밟으려는 악당을 막는게 우리의 사명이 아니겠는가?"
 
     return
 
@@ -897,7 +905,7 @@ label Forced_Boss: # 강제 (-2점)
 
     show BossHS
 
-    q "자네가 태현이인가? 반갑군"
+    q "자네가 태현군인가? 반갑군"
     q "그건 그렇고... "
     q "일을 참 크게도 벌려 놨구만..."
     ch_HoSeung "내 이름은 장호승일세"
@@ -908,6 +916,11 @@ label Forced_Boss: # 강제 (-2점)
 
     "자신을 장호승이라 소개한 남성이 자신과 함께 가자고 했다"
     "태현이는 그 남자가 조금 수상했지만 당장은 다른 방법이 없었다"
+
+    show TaeHyeon
+
+    ch_TaeHyeon "일단 따라가겠습니다"
+    ch_TaeHyeon "어떻게 할까요?"
 
     return
 
