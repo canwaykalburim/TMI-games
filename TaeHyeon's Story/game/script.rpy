@@ -14,6 +14,10 @@ image BackSH:
     yalign 0.3
 
 image BossHS:
+    im.FactorScale("ch/BlackHS.png", 0.65)
+    yalign 0.5, xalign 1.0
+
+image BossHS:
     im.FactorScale("ch/BossHS.png", 0.65)
     yalign 0.5, xalign 1.0
 
@@ -786,7 +790,13 @@ label Negotiate_Boss: # 협상 (2점)
 
     "의문의 남성은 자신을 장호승이라고 소개했다"
 
-    ch_HoSeung "이름"
+    show BossHS
+
+    ch_HoSeung "자네 이름이 태현이가 맞는가?"
+
+    hide BossHS
+
+    "태현이는 가볍게 고개를 끄덕였다"
 
     return
 
@@ -798,18 +808,25 @@ label Agonize_Meet_Boss1: # 고민 (1점)
     "상하이 조는 거리를 줄이려 했지만 한 남성이 순간적으로 상하이 조의 앞에 나타났다"
     "의문의 남성은 상하이 조의 총을 걷어찼고 상하이 조를 발로 차 뒤로 밀어냈다"
 
+    show BlackHS
+
     q "휴... 아슬아슬하게 시간을 맞춘것 같구만!"
     q "반갑네 젊은이"
     q "조금 위험할 뻔 했지만"
     q "살아있으니 된것 아닌가?"
 
-    "태현이는 갑자기 일어난 일에 잠시 어안이 벙벙했다"
+    hide BlackHS
+
+    "태현이는 너무나도 갑자기 일어난 일에 잠시 어안이 벙벙했다"
     "하지만 정신을 차리고 재빨리 상하이 조를 바라봤다"
     "다행히 상하이 조는 의문의 남성의 등장으로 크게 당황하고 있었다"
 
     show SurpSH
 
-    ch_SangHai "아니! 당신이 여기를 어떻게???"
+    ch_SangHai "아니! 당신이 여기를 어떻게 왔지?"
+
+    hide SurpSH
+
 
     return
 
@@ -846,15 +863,18 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
 
     q "친구들을 위한다면 이런곳에서 가만히 서있으면 안되지 않는가?"
 
-    "의문의 남성은 상하이 조를 응시했다"
+    "의문의 남성은 약간 실망한 느낌을 드러냈다"
+    "이윽고 그 남성은 상하이 조를 응시했다"
 
     q "오랜만이군 총잡이"
+
+    "상하이 조는 그를 보자 조금 당황한 눈치였다"
 
     show SurpSH
 
     ch_SangHai "당신이 여기를 어떻게...?"
 
-    "상하이 조는 조금 당황한 눈치였다"
+    hide SurpSH
 
     q "앞으로의 미래를 이끌어갈 새싹을 짓밟으려는 악당을 막는게 우리의 사명이 아니겠는가?"
 
