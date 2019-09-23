@@ -13,7 +13,7 @@ image BackSH:
     im.FactorScale("ch/BackSH.png", 0.9)
     yalign 0.3
 
-image BossHS:
+image BlackHS:
     im.FactorScale("ch/BlackHS.png", 0.65)
     yalign 0.5, xalign 1.0
 
@@ -546,7 +546,7 @@ label Fight_Ending: # 싸운다
     ch_SangHai "친구들을 구하기 위해 혼자서 희생하려는 용기는 높게 사겠어"
     ch_SangHai "그런데 말이야..."
 
-    hide SangHai
+    hide AngrySH
     show TalkingSH
 
     ch_SangHai "세상에는 용기만으로는 안되는 일도 있단말이지..."
@@ -836,10 +836,17 @@ label Agreement_Meet_Boss: # 합의 (0점)
 
     "한 남성이 태현이와 상하이 조를 막아섰다"
 
+    show BlackHS
+
     q "용기있는 행동은 좋으나..."
     q "때로는 상황을 볼 줄도 알아야 한다네"
+    q "그래야 나중에 친구들을 만났을 때 웃으며 만날 수 있지 않겠는가?"
 
+    hide BlackHS
+
+    "의문의 남성이 태현이를 꾸짖고 있다"
     "태현이는 갑자기 나타난 남성 때문에 혼란스러워졌다"
+    "그리고 혼란스러운건 태현이 뿐만 아닌것 같았다"
 
     show SurpSH
 
