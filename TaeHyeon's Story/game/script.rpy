@@ -772,12 +772,12 @@ label Silence_Ending: # 침묵한다
 
 label Negotiate_Boss: # 협상 (2점)
 
-    "태현이 때문에 상하이 조가 휘청거렸다"
-    "그때, 순식간에 한 남성이 태현이의 눈 앞에 나타났다"
+    "태현이 때문에 상하이 조가 균형을 잃고 휘청거렸다"
+    "그순간 순식간에 한 남성이 태현이와 상하이 조의 눈 앞에 나타났다"
 
     q "잘했네 젊은이!"
 
-    "의문의 남성은 상하이 조의 옆구리를 가격했다"
+    "의문의 남성은 그렇게 말한 뒤 상하이 조의 옆구리를 가격했다"
     "충격 때문에 상하이 조는 상당히 멀리 날아가 지면에 부딪혔다"
     "의문의 남성은 태현이를 바라보며 크게 미소 지으며 말했다"
 
@@ -797,6 +797,12 @@ label Negotiate_Boss: # 협상 (2점)
     hide BossHS
 
     "태현이는 가볍게 고개를 끄덕였다"
+
+    show BossHS
+
+    ch_HoSeung "역시 내가 옛날부터 눈여겨 본 자로군"
+    ch_HoSeung "그런 상황에서 그런 기재를 발휘할 수 있다는 것은 보통 용기있는 행동이 아닐세"
+    ch_HoSeung "그렇기에 자네의 친구들도 자네를 믿고 이 상황을 맡길 수 있었을테지"
 
     return
 
@@ -857,23 +863,46 @@ label Agreement_Meet_Boss: # 합의 (0점)
     "상하이 조가 놀란듯 중얼거렸다"
     "의문의 남성은 그런 상하이 조에게 미소를 띄우며 말했다"
 
+    show BlackHS
+
+    q "호오..."
+    q "오랜만일세 애송이 총잡이"
+    q "못 본 사이에 더 퇴화했구만"
+    
+    hide BlackHS
+
+    "둘 사이에 묘한 신경전이 느껴졌다"
+    "태현이는 이틈에 그 사람에게 당연한 질문을 했다"
+
+    show BraveTH
+
+    ch_TaeHyeon "당신은 누구죠?"
+
     return
 
 label Agonize_Meet_Boss2: # 고민 (-1점)
 
     "태현이는 잠시 주춤 했다"
 
+    "그때 누군가 상하이 조를 막아섰다"
+    "그리고는 태현이를 보며 말했다"
+    
+    show BlackHS
+
     q "뭐하고 있나 젊은이"
     q "가만히 보고만 있을건가?"
-
-    "누군가 상하이 조를 막아섰다"
-
     q "친구들을 위한다면 이런곳에서 가만히 서있으면 안되지 않는가?"
+
+    hide BlackHS
 
     "의문의 남성은 약간 실망한 느낌을 드러냈다"
     "이윽고 그 남성은 상하이 조를 응시했다"
 
+    show BlackHS
+
     q "오랜만이군 총잡이"
+
+    hide BlackHS
 
     "상하이 조는 그를 보자 조금 당황한 눈치였다"
 
@@ -882,8 +911,16 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
     ch_SangHai "당신이 여기를 어떻게...?"
 
     hide SurpSH
+    show BlackHS
 
-    q "앞으로의 미래를 이끌어갈 새싹을 짓밟으려는 악당을 막는게 우리의 사명이 아니겠는가?"
+    q "앞으로의 미래를 이끌어갈 새싹을 짓밟으려는 악당을 막는게 나의... 아니, 우리의 사명이 아니겠는가?"
+    q "소개가 늦어서 미안하네 젊은이"
+    
+    hide BlackHS with dissolve
+    show BossHS with dissolve
+
+    q "내 이름은 장호승이라고 하네"
+    ch_HoSeung "만나서 반갑구만"
 
     return
 
@@ -895,24 +932,38 @@ label Forced_Boss: # 강제 (-2점)
 
     "누군가가 상하이 조를 막아섰다"
 
+    show BlackHS
+
     q "아직 앞날이 창창한 젊은 이를 이렇게 죽이면 쓰나"
 
-    "의문의 남성은 상하이 조를 응시했다"
+    hide BlackHS
 
+    "그렇게 말한 뒤 의문의 남성은 상하이 조를 응시했다"
+
+    show BlackHS
+    
     q "오랜만이군..."
     
+    show BlackHS
+
     show SurpSH
 
     ch_SangHai "당신이 여기를 어떻게..."
 
     hide SurpSH
 
-    "상하이 조는 조금 놀란것 같았다"
+    "상하이 조는 살짝 놀란것 같았다"
 
+    show BlackHS
+    
     q "내가 자네들의 속셈을 모를리가 없지"
     q "귀찮지만 이런 괜찮은 카드를 그냥 버릴 수는 없지"
 
+    hide BlackHS
+
     "의문의 남성이 조금씩 태현이에게 다가오면서 말했다"
+
+    show BlackHS
 
     q "친구들을 생각하는 마음이나"
     q "그들을 위해 희생하려는 용기 있는 모습은 좋았으나"
@@ -921,6 +972,7 @@ label Forced_Boss: # 강제 (-2점)
     q "하지만, 너무 걱정하지 말게 젊은이"
     q "자네는 내가..."
 
+    hide BlackHS with dissolve
     show BossHS with dissolve
 
     q "지켜주겠네"
