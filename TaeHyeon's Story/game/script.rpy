@@ -830,8 +830,20 @@ label Agonize_Meet_Boss1: # 고민 (1점)
     show SurpSH
 
     ch_SangHai "아니! 당신이 여기를 어떻게 왔지?"
+    ch_SangHai "당신은 분명..."
 
     hide SurpSH
+
+    "상하이 조가 무언가 말하려다 관두었다"
+    "의문의 남성은 눈을 감고 말하였다"
+
+    show BlackHS
+
+    q "오랜만일세 총잡이 상하이조"
+    q "인연이라는게 참 무섭군"
+    q "우리가 여기서 이렇게 만날지 누가 알았겠는가?"
+
+    hide BlackHS
 
 
     return
@@ -867,23 +879,42 @@ label Agreement_Meet_Boss: # 합의 (0점)
 
     q "호오..."
     q "오랜만일세 애송이 총잡이"
-    q "못 본 사이에 더 퇴화했구만"
+    q "못 본지 꽤 된것 같은데..."
+    q "네 녀석은 바뀐게 없구만?"
     
     hide BlackHS
+    show AngrySH
 
+    ch_SangHai "말하는 꼴은 여전히 못 고쳤구만"
+    ch_SangHai "그러니까 그때..."
+
+    "말이 다 끝나기 전에 상하이 조는 말을 멈췄다"
     "둘 사이에 묘한 신경전이 느껴졌다"
     "태현이는 이틈에 그 사람에게 당연한 질문을 했다"
 
     show BraveTH
 
+    ch_TaeHyeon "그래서..."
     ch_TaeHyeon "당신은 누구죠?"
+
+    hide BraveTH
+
+    "의문의 남성은 잊고 있었다는 듯이 놀라며 말했다"
+
+    show BlackHS
+    
+    q "오, 이런..."
+    q "내 소개가 늦었군"
+    q "난 장호승이라 하네"
+    ch_HoSeung "만나서 반갑네"
+
+    "의문의 남성은 자신을 장호승이라고 말했다"
 
     return
 
 label Agonize_Meet_Boss2: # 고민 (-1점)
 
     "태현이는 잠시 주춤 했다"
-
     "그때 누군가 상하이 조를 막아섰다"
     "그리고는 태현이를 보며 말했다"
     
@@ -891,15 +922,16 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
 
     q "뭐하고 있나 젊은이"
     q "가만히 보고만 있을건가?"
-    q "친구들을 위한다면 이런곳에서 가만히 서있으면 안되지 않는가?"
+    q "자네를 믿고 피신한 친구들을 생각 한다면 이런곳에서 가만히 서 있으면 안되지 않는가?"
 
     hide BlackHS
 
-    "의문의 남성은 약간 실망한 느낌을 드러냈다"
+    "의문의 남성은 약간이지만 실망감을 드러냈다"
     "이윽고 그 남성은 상하이 조를 응시했다"
 
     show BlackHS
 
+    q "호오"
     q "오랜만이군 총잡이"
 
     hide BlackHS
@@ -911,9 +943,14 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
     ch_SangHai "당신이 여기를 어떻게...?"
 
     hide SurpSH
+    
+    "의문의 남성은 가볍게 미소지으며 말했다"
+    
     show BlackHS
 
-    q "앞으로의 미래를 이끌어갈 새싹을 짓밟으려는 악당을 막는게 나의... 아니, 우리의 사명이 아니겠는가?"
+    q "앞으로의 미래를 이끌어 갈 새싹을 짓밟으려는 악당을 막는게 나의..."
+    q "아니, 우리의 사명이 아니겠는가?"
+    q "이런, 내 정신 좀 보게"
     q "소개가 늦어서 미안하네 젊은이"
     
     hide BlackHS with dissolve
@@ -921,6 +958,10 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
 
     q "내 이름은 장호승이라고 하네"
     ch_HoSeung "만나서 반갑구만"
+
+    hide BossHS
+
+    "의문의 남성은 자신을 장호승이라고 말했다"
 
     return
 
@@ -930,7 +971,7 @@ label Forced_Boss: # 강제 (-2점)
 
     q "이봐 이봐 그쯤하지"
 
-    "누군가가 상하이 조를 막아섰다"
+    "멀리서 누군가의 목소리가 들려왔고 목소리의 정체는 순식간에 상하이 조를 막아섰다"
 
     show BlackHS
 
@@ -944,8 +985,7 @@ label Forced_Boss: # 강제 (-2점)
     
     q "오랜만이군..."
     
-    show BlackHS
-
+    hide BlackHS
     show SurpSH
 
     ch_SangHai "당신이 여기를 어떻게..."
@@ -970,9 +1010,12 @@ label Forced_Boss: # 강제 (-2점)
     q "자네는 조금 침착하게 행동할 필요가 있네"
     q "그렇지 않아서 이렇게 위험에 빠지지 않았나?"
     q "하지만, 너무 걱정하지 말게 젊은이"
-    q "자네는 내가..."
+    q "자네는"
 
     hide BlackHS with dissolve
+
+    q "내가"
+
     show BossHS with dissolve
 
     q "지켜주겠네"
@@ -984,11 +1027,12 @@ label Forced_Boss: # 강제 (-2점)
 
     show BossHS
 
-    q "자네가 태현군인가? 반갑군"
+    q "자네가 태현군이 맞나?"
+    q "만나서 반갑네"
     q "그건 그렇고... "
     q "일을 참 크게도 벌려 놨구만..."
     ch_HoSeung "내 이름은 장호승일세"
-    ch_HoSeung "우선은... 저 자에게서 벗어나야겠군"
+    ch_HoSeung "우선은 저 자에게서 벗어나야겠군"
     ch_HoSeung "자, 나와 함께 가세"
 
     hide BossHS
@@ -1000,6 +1044,8 @@ label Forced_Boss: # 강제 (-2점)
 
     ch_TaeHyeon "일단 따라가겠습니다"
     ch_TaeHyeon "어떻게 할까요?"
+
+    hide TaeHyeon
 
     return
 
