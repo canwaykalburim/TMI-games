@@ -802,7 +802,7 @@ label Negotiate_Boss: # 협상 (2점)
 
     ch_HoSeung "역시 내가 옛날부터 눈여겨 본 자로군"
     ch_HoSeung "그런 상황에서 그런 기재를 발휘할 수 있다는 것은 보통 용기있는 행동이 아닐세"
-    ch_HoSeung "그렇기에 자네의 친구들도 자네를 믿고 이 상황을 맡길 수 있었을테지"
+    ch_HoSeung "그렇기에 자네의 친구들도 자네를 믿고 이 상황을 맡길 수 있었을 테지"
 
     return
 
@@ -835,7 +835,8 @@ label Agonize_Meet_Boss1: # 고민 (1점)
     hide SurpSH
 
     "상하이 조가 무언가 말하려다 관두었다"
-    "의문의 남성은 눈을 감고 말하였다"
+    "의문의 남성은 무언가를 생각하며 눈을 감았다"
+    "그리고 이내 입가에 작게 미소를 띠며 입을 열었다"
 
     show BlackHS
 
@@ -845,6 +846,41 @@ label Agonize_Meet_Boss1: # 고민 (1점)
 
     hide BlackHS
 
+    "의문의 남성이 알 수 없는 말을 했다"
+    "그리고 문득 정신을 차린듯 태현이를 보며 말했다"
+    
+    show BlackHS
+
+    q "오, 이런!"
+    q "내 정신 좀 보게"
+    q "소개가 늦어서 미안하네 젊은이"
+
+    hide BlackHS with dissolve
+    show BossHS with dissolve
+
+    q "내 이름은 장호승이라 하네"
+    ch_HoSeung "만나서 반갑구만"
+
+    hide BlackHS
+
+    "의문의 남성은 자신을 장호승이라고 소개했다"
+
+    show BraveTH
+
+    ch_TaeHyeon "그건 됐고, 당신이 여기 온 이유가 뭡니까"
+    
+    hide BraveTH
+    show BossHS
+
+    ch_HoSeung "허허..."
+    ch_HoSeung "여기서 말하기는 좀 긴 얘기가 될 것 같군"
+    ch_HoSeung "저기 있는 총잡이도 문제고 말이지"
+    ch_HoSeung "태현, 나와 함께 가지 않겠는가?"
+    ch_HoSeung "내가 자네와 친구들을 보호해 주겠네"
+    ch_HoSeung "자세한 이야기 또한 그때 천천히 해주겠네"
+    ch_HoSeung "어떤가? 적절한 대우는 해주겠네"
+
+    hide BossHS
 
     return
 
@@ -885,7 +921,7 @@ label Agreement_Meet_Boss: # 합의 (0점)
     hide BlackHS
     show AngrySH
 
-    ch_SangHai "말하는 꼴은 여전히 못 고쳤구만"
+    ch_SangHai "그러는 당신이야말로 그 짜증나는 말투는 여전히 못 고쳤구만"
     ch_SangHai "그러니까 그때..."
 
     "말이 다 끝나기 전에 상하이 조는 말을 멈췄다"
@@ -908,7 +944,14 @@ label Agreement_Meet_Boss: # 합의 (0점)
     q "난 장호승이라 하네"
     ch_HoSeung "만나서 반갑네"
 
-    "의문의 남성은 자신을 장호승이라고 말했다"
+    "의문의 남성은 자신을 장호승이라고 소개했다"
+
+    show BraveHS
+
+    ch_HoSeung "아무튼! 일단 상황이 생각보다 복잡해졌으니까"
+    ch_HoSeung "저 총잡이 녀석에게서 멀어지는 것이 1순위인 것 같군"
+    ch_HoSeung "나와 함께 가겠는가?"
+    ch_HoSeung "나머지는 그때 가서 천천히 얘기하겠네"
 
     return
 
@@ -922,7 +965,7 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
 
     q "뭐하고 있나 젊은이"
     q "가만히 보고만 있을건가?"
-    q "자네를 믿고 피신한 친구들을 생각 한다면 이런곳에서 가만히 서 있으면 안되지 않는가?"
+    q "자네를 믿고 피신한 친구들을 생각한다면 이런 곳에서 가만히 서 있으면 안 되지 않는가?"
 
     hide BlackHS
 
@@ -944,13 +987,13 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
 
     hide SurpSH
     
-    "의문의 남성은 가볍게 미소지으며 말했다"
+    "의문의 남성은 가볍게 미소 지으며 말했다"
     
     show BlackHS
 
-    q "앞으로의 미래를 이끌어 갈 새싹을 짓밟으려는 악당을 막는게 나의..."
+    q "앞으로의 미래를 이끌어 갈 새싹을 짓밟으려는 악당을 막는 게 나의..."
     q "아니, 우리의 사명이 아니겠는가?"
-    q "이런, 내 정신 좀 보게"
+    q "이런! 내 정신 좀 보게"
     q "소개가 늦어서 미안하네 젊은이"
     
     hide BlackHS with dissolve
@@ -961,7 +1004,14 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
 
     hide BossHS
 
-    "의문의 남성은 자신을 장호승이라고 말했다"
+    "의문의 남성은 자신을 장호승이라고 소개했다"
+
+    show BossHS
+
+    ch_HoSeung "상황을 보니 자네 지금 곤란해 보이는구만?"
+    ch_HoSeung "나와 함께 가게"
+    ch_HoSeung "자세한 이야기는 일단은 몸을 추스른 뒤 하도록 하지"
+    ch_HoSeung "함께 가도록 하겠나?"
 
     return
 
@@ -1031,13 +1081,13 @@ label Forced_Boss: # 강제 (-2점)
     q "만나서 반갑네"
     q "그건 그렇고... "
     q "일을 참 크게도 벌려 놨구만..."
-    ch_HoSeung "내 이름은 장호승일세"
     ch_HoSeung "우선은 저 자에게서 벗어나야겠군"
+    ch_HoSeung "내 이름은 장호승일세"
     ch_HoSeung "자, 나와 함께 가세"
 
     hide BossHS
 
-    "자신을 장호승이라 소개한 남성이 자신과 함께 가자고 했다"
+    "자신을 장호승이라 소개한 남성은 자신과 함께 가자고 했다"
     "태현이는 그 남자가 조금 수상했지만 당장은 다른 방법이 없었다"
 
     show TaeHyeon
