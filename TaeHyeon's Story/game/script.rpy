@@ -822,13 +822,37 @@ label Negotiate_Boss: # 협상 (2점)
     "태현이는 상하이 조와 대면했을 때처럼 방심하지 않기 위해 호승과 거리를 두었다"
     "호승은 대놓고 아쉬워하며 얘기했다"
 
-    show BlackHS
+    show BossHS
 
     ch_HoSeung "이럴 수가"
     ch_HoSeung "내가 저기 쓰러져 있는 놈이랑 같은 취급이라니"
     ch_HoSeung "낯선 사람을 조심해야 하기는 해야 한다만..."
     ch_HoSeung "사람 보는 눈은 좀 길러야겠구만"
     ch_HoSeung "완벽한 것 같았는데 이런 점에선 감점이구만"
+
+    hide BlackHS
+
+    "호승은 능청스럽게 말을 돌렸다"
+    "하지만 태현이에게는 지켜야할 사람들이 있었기에 여유가 많지 않았다"
+
+    show BraveTH
+
+    ch_TaeHyeon "장난은 그만 하시죠"
+    ch_TaeHyeon "저에게는 저를 기다리는 친구들이 있습니다"
+    ch_TaeHyeon "그렇기에 한시라도 빨리 저 녀석을 쓰러트리고 그들에게 돌아가고 싶습니다"
+
+    hide BraveTH
+
+    "태현이의 완곡한 부탁에 호승은 장난을 그만두기로 했다"
+
+    show BossHS
+
+    ch_HoSeung "어디보자 얘기 하기에는 조금 길지만"
+    ch_HoSeung "자네가 원한다면야..."
+
+    hide BossHS
+
+    "그때 상하이 조가 조금씩 움직이다 일어섰다"
 
     return
 
@@ -907,6 +931,8 @@ label Agonize_Meet_Boss1: # 고민 (1점)
     ch_HoSeung "어떤가? 적절한 대우는 해주겠네"
 
     hide BossHS
+
+    "호승은 태현이가 자신과 함께 가기를 원하는 것 같았다"
 
     return
 
@@ -1038,6 +1064,11 @@ label Agonize_Meet_Boss2: # 고민 (-1점)
     ch_HoSeung "나와 함께 가게"
     ch_HoSeung "자세한 이야기는 일단은 몸을 추스른 뒤 하도록 하지"
     ch_HoSeung "함께 가도록 하겠나?"
+
+    hide BossHS
+
+    "호승은 태현이에게 함께 갈것을 권유했다"
+    "태현은 약간 고민했다"
 
     return
 
