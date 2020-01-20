@@ -853,6 +853,19 @@ label Negotiate_Boss: # 협상 (2점)
     hide BossHS
 
     "그때 상하이 조가 조금씩 움직이다 일어섰다"
+    "그리고 그는 호승을 보고 큰 충격에 빠진듯 했다"
+
+    show BackSH
+
+    ch_SangHai "크윽..."
+    ch_SangHai "네 녀석이 어떻게 여기 있지...?"
+    ch_SangHai "네 녀석은 분명히 그때 죽었는데..."
+
+    hide BackSH
+    show BossHS
+
+    ch_HoSeung "겨우 그런거에 내가 죽을줄 알았느냐 "
+    
 
     return
 
@@ -951,8 +964,8 @@ label Agreement_Meet_Boss: # 합의 (0점)
     hide BlackHS
 
     "의문의 남성이 태현이를 꾸짖고 있다"
-    "태현이는 갑자기 나타난 남성 때문에 혼란스러워졌다"
-    "그리고 혼란스러운건 태현이 뿐만 아닌것 같았다"
+    "갑자기 나타난 남성 때문에 태현이는 점점 혼란스러워졌다"
+    "그러나 혼란스러운건 태현이 뿐만 아닌것 같았다"
 
     show SurpSH
 
@@ -978,7 +991,7 @@ label Agreement_Meet_Boss: # 합의 (0점)
 
     "말이 다 끝나기 전에 상하이 조는 말을 멈췄다"
     "둘 사이에 묘한 신경전이 느껴졌다"
-    "태현이는 이틈에 그 사람에게 당연한 질문을 했다"
+    "태현이는 이틈에 갑자기 나타난 의문의 남성에게 당연한 질문을 했다"
 
     show BraveTH
 
@@ -1138,7 +1151,7 @@ label Forced_Boss: # 강제 (-2점)
     q "만나서 반갑네"
     q "그건 그렇고... "
     q "일을 참 크게도 벌려 놨구만..."
-    ch_HoSeung "우선은 저 자에게서 벗어나야겠군"
+    q "우선은 저 자에게서 벗어나야겠군"
     ch_HoSeung "내 이름은 장호승일세"
     ch_HoSeung "자, 나와 함께 가세"
 
@@ -1153,6 +1166,56 @@ label Forced_Boss: # 강제 (-2점)
     ch_TaeHyeon "어떻게 할까요?"
 
     hide TaeHyeon
+
+    "태현이의 말에 호승은 고개를 갸웃했다"
+
+    show BossHS
+
+    ch_HoSeung "뭘 어떻게 한다는 거냐?"
+
+    hide BossHS
+
+    "그순간 갑자기 상공에서 헬기 소리가 들렸다"
+
+    show BossHS
+
+    ch_HoSeung "당연히 손을 잡아야지"
+
+    hide BossHS
+
+    "호승은 그렇게 말한 뒤 태현이의 손을 붙잡았다" 
+    "이윽고 하늘에서 헬기가 사다리를 내렸고 호승은 사다리를 잡고 올라탔다"
+    "상하이 조는 빠른 속도로 쫓아왔지만 헬기는 이미 예상했다는 듯이 고도를 높이며 아슬아슬하게 상하이 조를 따돌렸다"
+    "그리고 그 행동은 상하이 조의 심기를 건들인 것 같았다"
+
+    show KillerSH
+
+    ch_SangHai "이 녀석들이 지금 누굴 무시하나!"
+
+    hide KillerSH
+
+    "상하이 조가 헬기 쪽으로 총을 난사했다"
+
+    show BraveHS
+
+    ch_HoSeung "거기 총잡이! 위험하게 뭐 하는 짓인가?"
+    ch_HoSeung "계속 그렇게 총을 쏘면 나도 다 방법이 있네!"
+    ch_HoSeung "어이! 지금일세!"
+
+    hide BraveHS
+
+    "호승은 헬기를 향해 신호를 보냈고, 신호를 보내자마자 헬기에서 회색 구형의 물체가 떨어졌다"
+    "회색 구형의 물체는 바닥에 닿자 회색 연기를 뿜어냈고, 잠시 뒤 근처의 시야를 전부 가렸다"
+
+    show BraveHS
+
+    ch_HoSeung "아쉽게도 우리의 일은 다음에 결판내야겠구만 총잡이!"
+    ch_HoSeung "그럼 그때까지 잘 있게~"
+
+    hide BraveHS
+
+    "상하이 조는 무언가 소리를 내는 듯 싶었으나 이내 들리지 않게 되었다"
+
 
     return
 
