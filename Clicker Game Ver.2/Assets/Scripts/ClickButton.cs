@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickButton : MonoBehaviour
-{
-    public int gold = 0;
-    public int goldPerClick = 1;
-
+public class ClickButton : MonoBehaviour {
+    public DataController dataController;
     public void OnClick()
     {
-        gold += goldPerClick;
+        int goldPerClick = dataController.GetGoldPerClick();
+        dataController.AddGold(goldPerClick);
     }
 }
