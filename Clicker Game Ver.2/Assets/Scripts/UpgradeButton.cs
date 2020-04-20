@@ -50,6 +50,6 @@ public class UpgradeButton : MonoBehaviour {
 
     public void UpdateUI()
     {
-        upgradeDisplayer.text = upgradeName + "\nCost: " + currentCost + "\nLevel: " + level + "\nNext New GoldPerClick: " + goldByUpgrade;
+        upgradeDisplayer.text = upgradeName + "\nCost: " + currentCost + "\nLevel: " + level + "\nNext PowerPerClick: " + goldByUpgrade;
     }
 }

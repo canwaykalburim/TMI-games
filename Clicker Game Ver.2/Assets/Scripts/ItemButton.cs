@@ -63,12 +63,12 @@ public class ItemButton : MonoBehaviour
 
     public void UpdateItem()
     {
-        goldPerSec = startGoldPerSec * (int)Mathf.Pow(upgradePow, level);
+        goldPerSec = goldPerSec + startGoldPerSec * (int)Mathf.Pow(upgradePow, level);
         currentCost = startCurrentCost * (int)Mathf.Pow(costPow, level);
     }
 
     public void UpdateUI()
     {
-        itemDisplayer.text = itemName + "\nLevel: " + level + "\nCost: " + currentCost + "\nGold Per Sec: " + goldPerSec + "\nIsPurchased: " + isPurchased;
+        itemDisplayer.text = itemName + "\nLevel: " + level + "\nCost: " + currentCost + "\nPower Per Sec: " + goldPerSec + "\nIsPurchased: " + isPurchased;
     }
 }
